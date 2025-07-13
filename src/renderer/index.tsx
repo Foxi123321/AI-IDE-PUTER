@@ -19,7 +19,8 @@ root.render(
 );
 
 // Hot Module Replacement (HMR) for development
-if (module.hot) {
+declare const module: any;
+if (typeof module !== 'undefined' && module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default;
     root.render(

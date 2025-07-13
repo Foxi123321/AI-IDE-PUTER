@@ -520,7 +520,7 @@ export class ToolService {
             const content = await fs.promises.readFile(fullPath, 'utf-8');
             const lines = content.split('\n');
             
-            lines.forEach((line, index) => {
+            lines.forEach((line: string, index: number) => {
               if (regex.test(line)) {
                 results.push({
                   file: path.relative(this.workspacePath, fullPath),

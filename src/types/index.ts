@@ -93,7 +93,7 @@ export interface Tool {
     properties: Record<string, ToolParameter>;
     required?: string[];
   };
-  handler: (params: Record<string, any>) => Promise<any>;
+  handler: (params: any) => Promise<any>;
 }
 
 export interface ToolParameter {
