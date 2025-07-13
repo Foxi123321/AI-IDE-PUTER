@@ -14,7 +14,9 @@
     "package": "electron-builder",
     "test": "jest",
     "lint": "eslint src --ext .ts,.tsx",
-    "format": "prettier --write src/**/*.{ts,tsx,css}"
+    "format": "prettier --write src/**/*.{ts,tsx,css}",
+    "clean": "rimraf dist node_modules package-lock.json",
+    "postinstall": "electron-builder install-app-deps"
   },
   "keywords": [
     "electron",
@@ -33,6 +35,7 @@
     "@types/react-dom": "^18.2.18",
     "@types/uuid": "^9.0.7",
     "@types/ws": "^8.5.10",
+    "@types/lodash": "^4.14.202",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "autoprefixer": "^10.4.16",
@@ -48,6 +51,7 @@
     "postcss": "^8.4.32",
     "postcss-loader": "^7.3.3",
     "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
     "style-loader": "^3.3.3",
     "tailwindcss": "^3.3.6",
     "@tailwindcss/forms": "^0.5.7",
@@ -61,7 +65,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@monaco-editor/react": "^4.6.0",
-    "axios": "^1.6.0",
+    "axios": "^1.6.2",
     "clsx": "^2.0.0",
     "diff": "^5.1.0",
     "lodash": "^4.17.21",
@@ -69,8 +73,8 @@
     "react-dom": "^18.2.0",
     "react-hotkeys-hook": "^4.4.1",
     "react-resizable-panels": "^0.0.55",
-    "uuid": "^9.0.0",
-    "ws": "^8.14.0"
+    "uuid": "^9.0.1",
+    "ws": "^8.14.2"
   },
   "build": {
     "appId": "com.cursor-ai-clone.app",
@@ -91,5 +95,9 @@
     "linux": {
       "target": "AppImage"
     }
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }

@@ -1,0 +1,56 @@
+# Cursor AI Clone - Project Rules
+
+## Global Development Rules
+- Always use TypeScript for new files
+- Follow React functional component patterns with hooks
+- Use Tailwind CSS for all styling
+- Implement proper error handling with try/catch blocks
+- Write comprehensive JSDoc comments for all functions
+- Use async/await instead of .then() for promises
+
+## Code Style Rules
+- Use 2 spaces for indentation
+- Prefer const over let when possible
+- Use descriptive variable and function names
+- Import React hooks at the top of components
+- Group imports: external packages, internal modules, relative imports
+
+## Electron Specific Rules
+- Always use contextBridge for main-renderer communication
+- Never expose Node.js APIs directly to renderer
+- Use IPC for all file system operations
+- Handle Electron app lifecycle events properly
+
+## AI Integration Rules
+- Always validate AI responses before processing
+- Implement proper error handling for AI API calls
+- Use streaming for real-time AI responses when possible
+- Cache AI responses to improve performance
+- Provide fallback behavior when AI is unavailable
+
+## Security Rules
+- Sanitize all user inputs
+- Validate file paths before file operations
+- Use Content Security Policy (CSP) headers
+- Never execute arbitrary code from AI responses without validation
+
+## Performance Rules
+- Use React.memo for expensive components
+- Implement lazy loading for heavy components
+- Debounce AI requests to prevent spam
+- Use virtual scrolling for large lists
+- Optimize bundle size with code splitting
+
+## Testing Rules
+- Write unit tests for all utility functions
+- Test React components with React Testing Library
+- Mock external dependencies in tests
+- Test error scenarios and edge cases
+- Maintain test coverage above 80%
+
+## Puter.js Integration Rules
+- Always check if puter.js is available before use
+- Implement fallback AI service when puter.js is unavailable
+- Handle puter.js connection errors gracefully
+- Use proper TypeScript types for puter.js responses
+- Cache puter.js authentication if required
