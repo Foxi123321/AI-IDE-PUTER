@@ -1,34 +1,32 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/main/main.ts',
   target: 'electron-main',
-  mode: process.env.NODE_ENV || 'development',
+  entry: './src/main/main.ts',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
     ],
   },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist/main'),
-  },
   node: {
     __dirname: false,
     __filename: false,
   },
-  optimization: {
-    minimize: false,
+  externals: {
+    'electron': 'require("electron")',
   },
-  devtool: 'source-map',
 };
